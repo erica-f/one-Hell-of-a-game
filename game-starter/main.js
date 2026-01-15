@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function () {
       30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 37, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
       30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 32, 30, 30, 30, 30, 30, 30, 30, 30, 30,
       30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
-      30, 33, 30, 31, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 35, 30, 30, 30, 30, 30, 37, 30, 30, 30,
+      30, 33, 30, 31, 30, 30, 60, 30, 30, 30, 30, 30, 30, 30, 35, 30, 30, 30, 30, 30, 37, 30, 30, 30,
       30, 30, 30, 30, 33, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
       30, 35, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 32, 30, 30, 30,
       30, 30, 30, 30, 30, 30, 30, 35, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
@@ -52,17 +52,17 @@ window.addEventListener("DOMContentLoaded", function () {
       30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31,
       31, 10, 20, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 10, 23, 10, 23, 10, 10, 10, 10, 10, 10, 32,
       32, 10, 21, 10, 22, 10, 20, 20, 21, 22, 10, 21, 22, 10, 23, 10, 22, 10, 10, 10, 10, 10, 10, 33,
-      33, 10, 22, 10, 23, 10, 21, 10, 10, 20, 10, 10, 20, 10, 23, 10, 22, 10, 22, 23, 10, 21, 21, 34,
+      33, 10, 22, 10, 23, 10, 21, 10, 10, 20, 10, 63, 20, 10, 23, 10, 22, 10, 22, 23, 10, 21, 21, 34,
       34, 10, 10, 10, 22, 10, 22, 10, 10, 10, 20, 21, 10, 10, 22, 10, 21, 22, 10, 10, 10, 10, 22, 35,
-      35, 10, 23, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 22, 22, 10, 21, 10, 10, 21, 21, 10, 22, 36,
+      35, 22, 23, 10, 10, 10, 61, 10, 10, 10, 10, 21, 10, 22, 22, 10, 21, 10, 10, 21, 21, 10, 22, 36,
       36, 10, 10, 10, 20, 21, 20, 10, 10, 10, 10, 20, 10, 10, 10, 10, 22, 10, 22, 10, 10, 10, 10, 37,
-      37, 10, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
-      38, 10, 10, 23, 22, 10, 10, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
-      39, 10, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 10, 10, 10, 40,
-      40, 10, 22, 23, 10, 20, 20, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
+      37, 21, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
+      38, 20, 10, 23, 22, 10, 62, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
+      39, 23, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 10, 10, 10, 40,
+      40, 10, 22, 23, 62, 20, 20, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
       30, 10, 23, 10, 10, 21, 10, 10, 22, 24, 10, 18, 10, 24, 20, 20, 20, 10, 10, 10, 10, 10, 10, 31,
       31, 10, 10, 10, 22, 10, 10, 10, 22, 24, 10, 666, 10, 24, 10, 10, 10, 20, 10, 10, 20, 20, 10, 32,
-      32, 10, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
+      32, 21, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
       33, 50, 10, 10, 10, 20, 10, 10, 22, 10, 20, 10, 10, 10, 20, 10, 10, 20, 10, 10, 20, 10, 20, 34,
       34, 10, 10, 10, 10, 21, 22, 10, 22, 21, 20, 10, 20, 10, 20, 10, 20, 10, 10, 10, 20, 10, 20, 35,
       35, 20, 10, 20, 10, 10, 10, 10, 21, 21, 10, 10, 21, 10, 10, 10, 10, 10, 10, 10, 20, 10, 20, 36,
@@ -119,6 +119,7 @@ window.addEventListener("DOMContentLoaded", function () {
   console.log('Drawing gameplan.');
   drawGamePlan(gameArea, gameBlocks);
 
+  let hasClub = false;
 
   /**
    * Move Rockford
@@ -133,12 +134,38 @@ window.addEventListener("DOMContentLoaded", function () {
     };
     if (which) { rockford.className = 'baddie ' + which; }
 
-
     // First if means the baddie can movie
     if (!(gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] - 10)) {
       posLeft += moveLeft;
       posTop += moveTop;
       moveIt();
+    } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 63) { 
+        hasClub = true;
+        console.log(hasClub);
+        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+        gameBlocks[83] = 10;                  // Removes the club
+        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed club
+        rockford = document.getElementById('baddie1');
+        alert("Du har nu en farlig klubba i händerna!")
+        moveIt()
+    }else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 61) { 
+        if (hasClub) {
+          // alert("Du slår ner trollet. Riktigt våldsamt och blodigt. ")
+          let blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
+          blood_sound.volume = 0.6;
+          blood_sound.play();
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[126] = 10;                 // Removes the troll
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed troll
+          rockford = document.getElementById('baddie1');
+          moveIt()
+        }
+        else {
+          let troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
+          troll_sound.volume = 0.7;
+          troll_sound.play();
+          setTimeout(function() {alert("RAWWWR! Gå härifrån, tack.")}, 2000);
+        }
     } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 50) { 
         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
         gameBlocks[323] = 10;                 // Removes the door
@@ -158,16 +185,29 @@ window.addEventListener("DOMContentLoaded", function () {
               Vad är jag?`);
               if (answer == 'skugga' ||answer == 'en skugga' ||answer == 'Skugga' ||answer == 'En skugga' ||answer == 'skuggan' ||answer == 'Skuggan') {
                 alert("Du har utlistat djävulen! Du är nu vår nya djävul!");
+
                 area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
                 gameBlocks[299] = 10;                 // Removes the door
+                gameBlocks[275] = 60; 
                 drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
                 rockford = document.getElementById('baddie1');
+                rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
                 moveIt()
               } else {
                 alert("Du är lika dum som du ser ut! Tillbaka till början!");
                 window.location.reload();
               }
-    }else {  // Else means the baddie cannot move because of a wall
+    } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 60) {
+        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+        gameBlocks[323] = 24;
+        let endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
+        endSong.volume = 0.5;
+        endSong.play();
+        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+        rockford = document.getElementById('baddie1');
+        moveIt()
+    }
+    else {  // Else means the baddie cannot move because of a wall
       console.log('Block detected, cant move.');
     }
     // console.log("area.offsetLeft", area.offsetLeft);

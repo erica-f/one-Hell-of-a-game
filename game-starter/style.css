@@ -324,7 +324,7 @@ body {
   z-index: 10;
   width: 32px;
   height: 32px;
-  background-image: url(img/sprite_mickey_mos_mini.png);
+  background-image: url(img/skeleton_humanoid_small_old.png);
   background-repeat: no-repeat;
   -webkit-transition-property: left,top;
   -moz-transition-property: left,top;
@@ -342,9 +342,9 @@ body {
   -o-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-.baddie.up {background-position: -96px 0;}
-.baddie.down {background-position: -64px 0;}
-.baddie.left {background-position: -32px 0;}
+.baddie.up {background-position: 0 0;}
+.baddie.down {background-position: 0 0;}
+.baddie.left {background-position: 0 0;}
 .baddie.right {background-position: 0 0;}
 /** --------------------------------------------------------------
  * Boulder Dash Gameplan
@@ -387,6 +387,8 @@ body {
 .t52{background-image:url(img/tiles/floor/Hell/rough_red_2.png);}
 .t53{background-image:url(img/tiles/floor/Hell/rough_red_3.png);}
 
+.t60{background-image:url(img/tiles/floor/Hell/blood_puddle_red_3.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+
 
 .b11{background-image:url(img/tiles/wall/metal_wall.png);}
 .b12{background-image:url(img/tiles/wall/crystal_wall02.png);}
@@ -415,4 +417,8 @@ body {
 .b40{background-image:url(img/tiles/wall/Hell/hell_11.png);}
 
 .b50{background-image:url(img/tiles/items/Hell/altar_xom_3.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+.b60{background-image:url(img/items/yredelemnul.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+.b61{background-image:url(img/deep_troll_berserker.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+.b62{background-image:url(img/tiles/floor/Hell/crumbled_column_6.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+.b63{background-image:url(img/items/giant_spiked_club_2.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
 .b666{background-image:url(img/blue_devil_new.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
