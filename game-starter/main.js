@@ -153,16 +153,22 @@ window.addEventListener("DOMContentLoaded", function () {
     } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 66) {
       alert('Grattis! Du hittade en bägare!');
       hasCup = true;
+      let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
+      pickup.volume = 0.8;
+      pickup.play();
       area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
       gameBlocks[39] = 67;                 // Removes the magma
       drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
       rockford = document.getElementById('baddie1');
       moveIt()
     } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 64) {
-      let choiceDrink = prompt('Vill du dricka blodet?');
+      let choiceDrink = prompt('Vill du dricka blodet? Svara med Ja eller Nej.');
 
-      if (hasCup && choiceDrink == 'Ja') {
+      if (hasCup && choiceDrink == 'Ja' || choiceDrink == 'ja') {
         drankBlood = true;
+        let drink = new Audio('./sounds/slurp-76969.mp3');
+        drink.volume = 0.8;
+        drink.play();
         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
         gameBlocks[236] = 65;                 // Removes the magma
         drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
@@ -175,8 +181,8 @@ window.addEventListener("DOMContentLoaded", function () {
       }
 
     } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 68) {
-      let pushHalfling = prompt('Vill du knuffa honom?');
-      if (pushHalfling == 'Ja') {
+      let pushHalfling = prompt('Vill du knuffa honom? Svara med Ja eller Nej.');
+      if (pushHalfling == 'Ja' || pushHalfling == 'ja') {
         let scream = new Audio('./sounds/wilhelm-1-86895.mp3');
         scream.volume = 0.5;
         scream.play();
