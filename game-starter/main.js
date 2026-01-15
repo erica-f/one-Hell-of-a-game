@@ -54,16 +54,16 @@ window.addEventListener("DOMContentLoaded", function () {
       32, 10, 21, 10, 22, 10, 20, 20, 21, 22, 10, 21, 22, 10, 23, 10, 22, 10, 10, 10, 10, 10, 10, 33,
       33, 10, 22, 10, 23, 10, 21, 10, 10, 20, 10, 10, 20, 10, 23, 10, 22, 10, 22, 23, 10, 21, 21, 34,
       34, 10, 10, 10, 22, 10, 22, 10, 10, 10, 20, 21, 10, 10, 22, 10, 21, 22, 10, 10, 10, 10, 22, 35,
-      35, 22, 23, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 22, 22, 10, 21, 10, 10, 21, 21, 10, 22, 36,
+      35, 10, 23, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 22, 22, 10, 21, 10, 10, 21, 21, 10, 22, 36,
       36, 10, 10, 10, 20, 21, 20, 10, 10, 10, 10, 20, 10, 10, 10, 10, 22, 10, 22, 10, 10, 10, 10, 37,
-      37, 21, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
-      38, 20, 10, 23, 22, 10, 10, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
-      39, 23, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 10, 10, 10, 40,
+      37, 10, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
+      38, 10, 10, 23, 22, 10, 10, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
+      39, 10, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 10, 10, 10, 40,
       40, 10, 22, 23, 10, 20, 20, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
       30, 10, 23, 10, 10, 21, 10, 10, 22, 24, 10, 18, 10, 24, 20, 20, 20, 10, 10, 10, 10, 10, 10, 31,
-      31, 10, 10, 10, 22, 10, 10, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 20, 10, 10, 20, 20, 10, 32,
-      32, 21, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
-      33, 10, 22, 10, 10, 20, 10, 10, 22, 10, 20, 10, 10, 10, 20, 10, 10, 20, 10, 10, 20, 10, 20, 34,
+      31, 10, 10, 10, 22, 10, 10, 10, 22, 24, 10, 666, 10, 24, 10, 10, 10, 20, 10, 10, 20, 20, 10, 32,
+      32, 10, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
+      33, 50, 10, 10, 10, 20, 10, 10, 22, 10, 20, 10, 10, 10, 20, 10, 10, 20, 10, 10, 20, 10, 20, 34,
       34, 10, 10, 10, 10, 21, 22, 10, 22, 21, 20, 10, 20, 10, 20, 10, 20, 10, 10, 10, 20, 10, 20, 35,
       35, 20, 10, 20, 10, 10, 10, 10, 21, 21, 10, 10, 21, 10, 10, 10, 10, 10, 10, 10, 20, 10, 20, 36,
       36, 20, 10, 10, 20, 21, 21, 20, 10, 10, 10, 10, 23, 10, 10, 10, 20, 10, 10, 10, 20, 10, 20, 37,
@@ -74,6 +74,34 @@ window.addEventListener("DOMContentLoaded", function () {
       30, 10, 21, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 20, 10, 21, 21, 22, 10, 10, 10, 20, 32,
       30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31,
     ];
+
+
+    //     gameBlocks = [
+    //   30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31,
+    //   31, 10, 20, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 10, 23, 10, 23, 10, 10, 10, 10, 10, 10, 32,
+    //   32, 10, 21, 10, 22, 10, 20, 20, 21, 22, 10, 21, 22, 10, 23, 10, 22, 10, 10, 10, 10, 10, 10, 33,
+    //   33, 10, 22, 10, 23, 10, 21, 10, 10, 20, 10, 10, 20, 10, 23, 10, 22, 10, 22, 23, 10, 21, 21, 34,
+    //   34, 10, 10, 10, 22, 10, 22, 10, 10, 10, 20, 21, 10, 10, 22, 10, 21, 22, 10, 10, 10, 10, 22, 35,
+    //   35, 22, 23, 10, 10, 10, 10, 10, 10, 10, 10, 21, 10, 22, 22, 10, 21, 10, 10, 21, 21, 10, 22, 36,
+    //   36, 10, 10, 10, 20, 21, 20, 10, 10, 10, 10, 20, 10, 10, 10, 10, 22, 10, 22, 10, 10, 10, 10, 37,
+    //   37, 21, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
+    //   38, 20, 10, 23, 22, 10, 10, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
+    //   39, 23, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 10, 10, 10, 40,
+    //   40, 10, 22, 23, 10, 20, 20, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
+    //   30, 10, 23, 10, 10, 21, 10, 10, 22, 24, 10, 18, 10, 24, 20, 20, 20, 10, 10, 10, 10, 10, 10, 31,
+    //   31, 10, 10, 10, 22, 10, 10, 10, 22, 24, 10, 666, 10, 24, 10, 10, 10, 20, 10, 10, 20, 20, 10, 32,
+    //   32, 21, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
+    //   33, 50, 22, 10, 10, 20, 10, 10, 22, 10, 20, 10, 10, 10, 20, 10, 10, 20, 10, 10, 20, 10, 20, 34,
+    //   34, 10, 10, 10, 10, 21, 22, 10, 22, 21, 20, 10, 20, 10, 20, 10, 20, 10, 10, 10, 20, 10, 20, 35,
+    //   35, 20, 10, 20, 10, 10, 10, 10, 21, 21, 10, 10, 21, 10, 10, 10, 10, 10, 10, 10, 20, 10, 20, 36,
+    //   36, 20, 10, 10, 20, 21, 21, 20, 10, 10, 10, 10, 23, 10, 10, 10, 20, 10, 10, 10, 20, 10, 20, 37,
+    //   37, 10, 10, 10, 10, 10, 10, 10, 10, 10, 23, 10, 22, 10, 20, 10, 20, 20, 20, 20, 10, 10, 10, 38,
+    //   38, 10, 10, 20, 20, 20, 20, 21, 22, 22, 10, 10, 23, 10, 20, 10, 21, 10, 10, 10, 10, 10, 20, 39,
+    //   39, 10, 20, 20, 10, 10, 10, 10, 10, 22, 10, 22, 10, 10, 20, 10, 21, 10, 21, 20, 20, 10, 20, 40,
+    //   40, 10, 21, 10, 10, 21, 21, 21, 21, 21, 10, 10, 22, 10, 20, 10, 10, 10, 22, 10, 20, 10, 20, 30,
+    //   30, 10, 21, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 20, 10, 21, 21, 22, 10, 10, 10, 20, 32,
+    //   30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 30, 31,
+    // ];
 
   /**
    * Draw the initial gameplan
@@ -111,7 +139,35 @@ window.addEventListener("DOMContentLoaded", function () {
       posLeft += moveLeft;
       posTop += moveTop;
       moveIt();
-    } else {  // Else means the baddie cannot move because of a wall
+    } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 50) { 
+        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+        gameBlocks[323] = 10;                 // Removes the door
+        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+        rockford = document.getElementById('baddie1');
+        moveIt()
+    } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 666) {
+      const answer = prompt(`Tror du att du kan överlista djälvulen? Svara då på denna gåta: 
+              Jag följer dig från födsel till grav,
+              jag växer när ljuset är starkt.
+              I mörkret dör jag utan ett ljud,
+              men i solsken är jag din slav.
+
+              Du kan springa, gömma dig, fly eller slåss –
+              men mig lämnar du aldrig.
+
+              Vad är jag?`);
+              if (answer == 'skugga' ||answer == 'en skugga' ||answer == 'Skugga' ||answer == 'En skugga') {
+                alert("Rätt svar! Du kan gå vidare.");
+                area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+                gameBlocks[299] = 10;                 // Removes the door
+                drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+                rockford = document.getElementById('baddie1');
+                moveIt()
+              } else {
+                alert("Fel svar! Försök igen nästa gång.");
+                window.location.reload();
+              }
+    }else {  // Else means the baddie cannot move because of a wall
       console.log('Block detected, cant move.');
     }
     // console.log("area.offsetLeft", area.offsetLeft);
@@ -141,3 +197,35 @@ window.addEventListener("DOMContentLoaded", function () {
 
   console.log('Everything is ready.');
 });
+
+
+
+
+
+
+
+
+
+// SIBARS GREJER
+// } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 20) { 
+//         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+//         gameBlocks[344] = 10;                 // Removes the door
+//         drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+//         rockford = document.getElementById('baddie1');
+//         moveIt()
+
+//       // Plays a sound when trying to enter the closed door
+//       } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 18) {
+//         let audio = new Audio('sounds/trying-to-open-a-locked-door-104302.mp3');
+//         audio.volume = 0.2 //Volumne 0-1
+//         audio.play()
+
+//       // Plays a sound when arriving to the Emerald, and also giving a Success message 
+//       } else if (gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 14) {
+//         let audio = new Audio('sounds/chaos-emerald-323237.mp3');
+//         audio.volume = 0.2 //Volumne 0-1
+//         audio.play()
+//         alert("Congratz, You have arrived to Emerald City")
+//       } else {  // Else means the baddie cannot move because of a wall
+//         console.log('Block detected, cant move.');
+//       }
