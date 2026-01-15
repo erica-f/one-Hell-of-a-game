@@ -146,7 +146,7 @@ window.addEventListener("DOMContentLoaded", function () {
         rockford = document.getElementById('baddie1');
         moveIt()
     } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 666) {
-      const answer = prompt(`Tror du att du kan överlista djälvulen? Svara då på denna gåta: 
+      const answer = prompt(`Jasså, du tror att du kan överlista självaste djälvulen? Låt oss se, svara på denna gåta: 
               Jag följer dig från födsel till grav,
               jag växer när ljuset är starkt.
               I mörkret dör jag utan ett ljud,
@@ -156,15 +156,15 @@ window.addEventListener("DOMContentLoaded", function () {
               men mig lämnar du aldrig.
 
               Vad är jag?`);
-              if (answer == 'skugga' ||answer == 'en skugga' ||answer == 'Skugga' ||answer == 'En skugga') {
-                alert("Rätt svar! Du kan gå vidare.");
+              if (answer == 'skugga' ||answer == 'en skugga' ||answer == 'Skugga' ||answer == 'En skugga' ||answer == 'skuggan' ||answer == 'Skuggan') {
+                alert("Du har utlistat djävulen! Du är nu vår nya djävul!");
                 area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
                 gameBlocks[299] = 10;                 // Removes the door
                 drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
                 rockford = document.getElementById('baddie1');
                 moveIt()
               } else {
-                alert("Fel svar! Försök igen nästa gång.");
+                alert("Du är lika dum som du ser ut! Tillbaka till början!");
                 window.location.reload();
               }
     }else {  // Else means the baddie cannot move because of a wall
