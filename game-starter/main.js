@@ -176,7 +176,13 @@ window.addEventListener("DOMContentLoaded", function () {
   function actionWithTileInFront() {
     let tileInFront = getTileInFront()
 
-    if (tileInFront == 63) {
+    // Safety: Om vi inte får tag i en tile (edge of map), stop.
+    if (!tileInFront) return;
+
+    // Extrahera block value
+    const block = tileInFront.block;
+
+    if (block == 63) {
       console.log("Enter har tryckts med klubban framför oss!")
       hasClub = true;
       let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
@@ -187,129 +193,132 @@ window.addEventListener("DOMContentLoaded", function () {
       drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed club
       rockford = document.getElementById('baddie1');
       alert("Du har nu en farlig klubba i händerna!")
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 61) {
-      if (hasClub) {
-        // alert("Du slår ner trollet. Riktigt våldsamt och blodigt. ")
-        let blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
-        blood_sound.volume = 0.6;
-        blood_sound.play();
-        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[126] = 10;                 // Removes the troll
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed troll
-        rockford = document.getElementById('baddie1');
-        moveIt()
-      }
-      else {
-        let troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
-        troll_sound.volume = 0.7;
-        troll_sound.play();
-        setTimeout(function () { alert("RAWWWR! Gå härifrån, tack.") }, 1000);
-      }
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 66) {
-      alert('Grattis! Du hittade en bägare!');
-      hasCup = true;
-      let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
-      pickup.volume = 0.8;
-      pickup.play();
-      area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-      gameBlocks[39] = 67;                 // Removes the magma
-      drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
-      rockford = document.getElementById('baddie1');
-      moveIt()
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 64) {
-      let choiceDrink = prompt('Vill du dricka blodet? Svara med Ja eller Nej.');
 
-      if (hasCup && choiceDrink == 'Ja' || choiceDrink == 'ja') {
-        drankBlood = true;
-        let drink = new Audio('./sounds/slurp-76969.mp3');
-        drink.volume = 0.8;
-        drink.play();
-        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[236] = 65;                 // Removes the magma
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
-        rockford = document.getElementById('baddie1');
-        moveIt()
-      } else if (hasCup == false) {
-        alert('Du har inget att dricka ur. :(');
-      } else {
-
-      }
-
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 68) {
-      let pushHalfling = prompt('Vill du knuffa honom? Svara med Ja eller Nej.');
-      if (pushHalfling == 'Ja' || pushHalfling == 'ja') {
-        let scream = new Audio('./sounds/wilhelm-1-86895.mp3');
-        scream.volume = 0.5;
-        scream.play();
-        halflingDead = true;
-        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[302] = 10;                 // Removes the magma
-        gameBlocks[301] = 69;
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
-        rockford = document.getElementById('baddie1');
-        moveIt()
-      }
-
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 50) {
-      if (drankBlood && halflingDead) {
-        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[323] = 10;                 // Removes the magma
-        magma_move.play();
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
-        rockford = document.getElementById('baddie1');
-        moveIt()
-      } else {
-        if ((drankBlood == false && halflingDead == false)) {
-          alert('Du ser törstig ut, och du har publik.')
-        } else if (drankBlood == false) {
-          alert('Du ser törstig ut.');
-        } else {
-          alert('Du har publik.')
+    } else if (block == 61) {
+        if (hasClub) {
+          // alert("Du slår ner trollet. Riktigt våldsamt och blodigt. ")
+          let blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
+          blood_sound.volume = 0.6;
+          blood_sound.play();
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[126] = 10;                 // Removes the troll
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed troll
+          rockford = document.getElementById('baddie1');
+          moveIt()
         }
-      }
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 666) {
-      let devilLaugh = new Audio("./sounds/demonic-laugh-246556.mp3");
-      devilLaugh.volume = 0.5;
-      devilLaugh.play();
-      const answer = prompt(`Jasså, du tror att du kan överlista självaste djälvulen? Låt oss se, svara på denna gåta: 
-              Jag följer dig från födsel till grav,
-              jag växer när ljuset är starkt.
-              I mörkret dör jag utan ett ljud,
-              men i solsken är jag din slav.
+        else {
+          let troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
+          troll_sound.volume = 0.7;
+          troll_sound.play();
+          setTimeout(function () { alert("RAWWWR! Gå härifrån, tack.") }, 1000);
+        }
 
-              Du kan springa, gömma dig, fly eller slåss –
-              men mig lämnar du aldrig.
-
-              Vad är jag?`);
-      if (answer == 'skugga' || answer == 'en skugga' || answer == 'Skugga' || answer == 'En skugga' || answer == 'skuggan' || answer == 'Skuggan') {
-        alert("Du har utlistat djävulen! Du är nu vår nya djävul!");
-
+    } else if (block == 66) {
+        alert('Grattis! Du hittade en bägare!');
+        hasCup = true;
+        let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
+        pickup.volume = 0.8;
+        pickup.play();
         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[299] = 10;                 // Removes the door
-        gameBlocks[275] = 60;
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+        gameBlocks[39] = 67;                 // Removes the magma
+        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
         rockford = document.getElementById('baddie1');
-        rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
         moveIt()
-      } else {
-        alert("Du är lika dum som du ser ut! Tillbaka till början!");
-        window.location.reload();
+
+    } else if (block == 64) {
+        let choiceDrink = prompt('Vill du dricka blodet? Svara med Ja eller Nej.');
+
+        if (hasCup && choiceDrink == 'Ja' || choiceDrink == 'ja') {
+          drankBlood = true;
+          let drink = new Audio('./sounds/slurp-76969.mp3');
+          drink.volume = 0.8;
+          drink.play();
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[236] = 65;                 // Removes the magma
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
+          rockford = document.getElementById('baddie1');
+          moveIt()
+        } else if (hasCup == false) {
+          alert('Du har inget att dricka ur. :(');
+        } else {
+
+        }
+
+    } else if (block == 68) {
+        let pushHalfling = prompt('Vill du knuffa honom? Svara med Ja eller Nej.');
+        if (pushHalfling == 'Ja' || pushHalfling == 'ja') {
+          let scream = new Audio('./sounds/wilhelm-1-86895.mp3');
+          scream.volume = 0.5;
+          scream.play();
+          halflingDead = true;
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[302] = 10;                 // Removes the magma
+          gameBlocks[301] = 69;
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
+          rockford = document.getElementById('baddie1');
+          moveIt()
       }
-    } else if (gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] == 60) {
-      if (runOnce < 1) {
-        runOnce++
-        // backgroundAudio.pause();
-        area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-        gameBlocks[323] = 24;
-        magma_move.play();
-        let endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
-        endSong.volume = 0.5;
-        endSong.play();
-        drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
-        rockford = document.getElementById('baddie1');
-        rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
-        moveIt()
-      }
+
+    } else if (block == 50) {
+        if (drankBlood && halflingDead) {
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[323] = 10;                 // Removes the magma
+          magma_move.play();
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
+          rockford = document.getElementById('baddie1');
+          moveIt()
+        } else {
+          if ((drankBlood == false && halflingDead == false)) {
+            alert('Du ser törstig ut, och du har publik.')
+          } else if (drankBlood == false) {
+            alert('Du ser törstig ut.');
+          } else {
+            alert('Du har publik.')
+          }
+        }
+    } else if (block == 666) {
+        let devilLaugh = new Audio("./sounds/demonic-laugh-246556.mp3");
+        devilLaugh.volume = 0.5;
+        devilLaugh.play();
+        const answer = prompt(`Jasså, du tror att du kan överlista självaste djälvulen? Låt oss se, svara på denna gåta: 
+                Jag följer dig från födsel till grav,
+                jag växer när ljuset är starkt.
+                I mörkret dör jag utan ett ljud,
+                men i solsken är jag din slav.
+
+                Du kan springa, gömma dig, fly eller slåss –
+                men mig lämnar du aldrig.
+
+                Vad är jag?`);
+        if (answer == 'skugga' || answer == 'en skugga' || answer == 'Skugga' || answer == 'En skugga' || answer == 'skuggan' || answer == 'Skuggan') {
+          alert("Du har utlistat djävulen! Du är nu vår nya djävul!");
+
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[299] = 10;                 // Removes the door
+          gameBlocks[275] = 60;
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+          rockford = document.getElementById('baddie1');
+          rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
+          moveIt()
+        } else {
+          alert("Du är lika dum som du ser ut! Tillbaka till början!");
+          window.location.reload();
+        }
+    } else if (block == 60) {
+        if (runOnce < 1) {
+          runOnce++
+          // backgroundAudio.pause();
+          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[323] = 24;
+          magma_move.play();
+          let endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
+          endSong.volume = 0.5;
+          endSong.play();
+          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
+          rockford = document.getElementById('baddie1');
+          rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
+          moveIt()
+        }
   }
 
 
