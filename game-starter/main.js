@@ -155,14 +155,14 @@ window.addEventListener("DOMContentLoaded", function () {
       rockford.className = 'baddie ' + which; 
       currentDirection = which; // Behövs för getTileInFront()!
 
-      // --- VISUAL DEBUG HELP ---
-      // Reset borders
-      rockford.style.border = "none";
-      // Add a red line on the side we are facing
-      if (which === 'left') rockford.style.borderLeft = "4px solid red";
-      if (which === 'right') rockford.style.borderRight = "4px solid red";
-      if (which === 'up') rockford.style.borderTop = "4px solid red";
-      if (which === 'down') rockford.style.borderBottom = "4px solid red";
+      // // --- VISUAL DEBUG HELP ---
+      // // Reset borders
+      // rockford.style.border = "none";
+      // // Add a red line on the side we are facing
+      // if (which === 'left') rockford.style.borderLeft = "4px solid red";
+      // if (which === 'right') rockford.style.borderRight = "4px solid red";
+      // if (which === 'up') rockford.style.borderTop = "4px solid red";
+      // if (which === 'down') rockford.style.borderBottom = "4px solid red";
     }
     
     // Can the baddie move?
