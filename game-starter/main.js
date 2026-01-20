@@ -107,7 +107,8 @@ window.addEventListener("DOMContentLoaded", function () {
   function getTileInFront(baddieDirection) {
       let xStep = 0, yStep = 0;
       // Om vår karaktär kollar höger blir steget han potentiellt kommer ta 1 i x-led
-      // Kollar han nedåt blir steget -1 i y-led etc
+      // Kollar han nedåt blir steget 1 i y-led etc (Counter intuitive men tvärtom från matematiska
+      // Cartesian coordinates!)
       switch (baddieDirection) {
             case 'left': xStep = -1; break;
             case 'right': xStep = 1; break;
