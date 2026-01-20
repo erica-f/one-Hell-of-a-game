@@ -98,10 +98,11 @@ window.addEventListener("DOMContentLoaded", function () {
   let halflingDead = false;
   let runOnce = 0;
 
-
-  let backgroundAudio = new Audio('./sounds/the-sound-of-hell-21703.mp3');
+  const backgroundAudio = new Audio('./sounds/the-sound-of-hell-21703.mp3');
   backgroundAudio.volume = 0.005;
   backgroundAudio.play();
+  const magma_move = new Audio("./sounds/liquid-whoosh-3-185332.mp3");
+  magma_move.volume = 0.2;
 
   function getTileInFront(baddieDirection) {
       let xStep, yStep = 0;
@@ -154,8 +155,7 @@ window.addEventListener("DOMContentLoaded", function () {
       rockford.className = 'baddie ' + which; 
       currentDirection = which; // Behövs för getTileInFront()!
     }
-    let magma_move = new Audio("./sounds/liquid-whoosh-3-185332.mp3");
-    magma_move.volume = 0.2;
+    
     // Can the baddie move?
     if (!(gameBlocks[(posLeft + moveLeft) + (posTop + moveTop) * gridSize] - 10)) {
       posLeft += moveLeft;
@@ -185,7 +185,7 @@ window.addEventListener("DOMContentLoaded", function () {
     if (block == 63) {
       console.log("Enter har tryckts med klubban framför oss!")
       hasClub = true;
-      let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
+      const pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
       pickup.volume = 0.8;
       pickup.play();
       area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
@@ -197,7 +197,7 @@ window.addEventListener("DOMContentLoaded", function () {
     } else if (block == 61) {
         if (hasClub) {
           // alert("Du slår ner trollet. Riktigt våldsamt och blodigt. ")
-          let blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
+          const blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
           blood_sound.volume = 0.6;
           blood_sound.play();
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
@@ -207,7 +207,7 @@ window.addEventListener("DOMContentLoaded", function () {
           moveIt()
         }
         else {
-          let troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
+          const troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
           troll_sound.volume = 0.7;
           troll_sound.play();
           setTimeout(function () { alert("RAWWWR! Gå härifrån, tack.") }, 1000);
@@ -216,7 +216,7 @@ window.addEventListener("DOMContentLoaded", function () {
     } else if (block == 66) {
         alert('Grattis! Du hittade en bägare!');
         hasCup = true;
-        let pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
+        const pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
         pickup.volume = 0.8;
         pickup.play();
         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
@@ -230,7 +230,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (hasCup && choiceDrink == 'Ja' || choiceDrink == 'ja') {
           drankBlood = true;
-          let drink = new Audio('./sounds/slurp-76969.mp3');
+          const drink = new Audio('./sounds/slurp-76969.mp3');
           drink.volume = 0.8;
           drink.play();
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
@@ -247,7 +247,7 @@ window.addEventListener("DOMContentLoaded", function () {
     } else if (block == 68) {
         let pushHalfling = prompt('Vill du knuffa honom? Svara med Ja eller Nej.');
         if (pushHalfling == 'Ja' || pushHalfling == 'ja') {
-          let scream = new Audio('./sounds/wilhelm-1-86895.mp3');
+          const scream = new Audio('./sounds/wilhelm-1-86895.mp3');
           scream.volume = 0.5;
           scream.play();
           halflingDead = true;
@@ -277,7 +277,7 @@ window.addEventListener("DOMContentLoaded", function () {
           }
         }
     } else if (block == 666) {
-        let devilLaugh = new Audio("./sounds/demonic-laugh-246556.mp3");
+        const devilLaugh = new Audio("./sounds/demonic-laugh-246556.mp3");
         devilLaugh.volume = 0.5;
         devilLaugh.play();
         const answer = prompt(`Jasså, du tror att du kan överlista självaste djälvulen? Låt oss se, svara på denna gåta: 
@@ -311,7 +311,7 @@ window.addEventListener("DOMContentLoaded", function () {
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
           gameBlocks[323] = 24;
           magma_move.play();
-          let endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
+          const endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
           endSong.volume = 0.5;
           endSong.play();
           drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
