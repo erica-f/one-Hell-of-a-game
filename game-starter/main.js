@@ -324,7 +324,7 @@ window.addEventListener("DOMContentLoaded", function () {
  * Vi kollar inte vilken/vilka knappar som hålls *ner* (onkeydown) utan vilken som precis trycks (onkeyup)
  */
   document.onkeyup = function (event) {
-    let key = event.key; 
+    const key = event.key; 
 
     switch (key) {
         case 'Enter': 
@@ -339,6 +339,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   console.log('Everything is ready.');
 });
+
 
 
 
