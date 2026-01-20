@@ -319,6 +319,7 @@ window.addEventListener("DOMContentLoaded", function () {
           rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
           moveIt()
         }
+    }
   }
 
 
