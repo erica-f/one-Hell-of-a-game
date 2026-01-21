@@ -60,9 +60,9 @@ window.addEventListener("DOMContentLoaded", function () {
       37, 21, 10, 10, 21, 10, 20, 10, 10, 10, 10, 10, 10, 10, 22, 10, 10, 10, 22, 10, 10, 10, 10, 38,
       38, 20, 10, 23, 22, 10, 62, 10, 10, 21, 21, 21, 20, 20, 10, 20, 10, 21, 10, 10, 10, 10, 10, 39,
       39, 23, 10, 10, 10, 10, 21, 10, 22, 24, 24, 24, 24, 24, 10, 20, 21, 21, 10, 10, 64, 10, 10, 40,
-      40, 10, 22, 23, 62, 20, 20, 10, 22, 24, 10, 10, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
-      30, 10, 23, 10, 10, 21, 10, 10, 22, 24, 10, 18, 10, 24, 20, 20, 20, 10, 10, 10, 10, 10, 10, 31,
-      31, 10, 10, 10, 22, 10, 20, 10, 22, 24, 10, 666, 10, 24, 68, 10, 10, 20, 10, 10, 20, 20, 10, 32,
+      40, 10, 22, 23, 62, 20, 20, 10, 22, 24, 10, 18, 10, 24, 10, 10, 10, 10, 10, 10, 10, 10, 10, 30,
+      30, 10, 23, 10, 10, 21, 10, 10, 22, 24, 10, 666, 10, 24, 20, 20, 20, 10, 10, 10, 10, 10, 10, 31,
+      31, 10, 10, 10, 22, 10, 20, 10, 22, 24, 10, 10, 10, 24, 68, 10, 10, 20, 10, 10, 20, 20, 10, 32,
       32, 21, 10, 21, 21, 21, 10, 21, 22, 24, 24, 24, 24, 24, 20, 20, 10, 20, 20, 10, 10, 10, 10, 33,
       33, 50, 10, 10, 10, 20, 10, 10, 22, 10, 20, 10, 10, 10, 20, 10, 10, 20, 10, 10, 20, 10, 20, 34,
       34, 10, 10, 10, 10, 21, 22, 10, 22, 21, 20, 10, 20, 10, 20, 10, 20, 10, 10, 10, 20, 10, 20, 35,
@@ -96,13 +96,13 @@ window.addEventListener("DOMContentLoaded", function () {
   let drankBlood = false;
   let hasCup = false;
   let halflingDead = false;
-  let runOnce = 0;
+
 
   const backgroundAudio = new Audio('./sounds/the-sound-of-hell-21703.mp3');
   backgroundAudio.volume = 0.005;
   backgroundAudio.play();
   const magma_move = new Audio("./sounds/liquid-whoosh-3-185332.mp3");
-  magma_move.volume = 0.2;
+  magma_move.volume = 0.05;
 
   function getTileInFront(baddieDirection) {
       let xStep = 0, yStep = 0;
@@ -196,7 +196,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.log("Enter har tryckts med klubban framför oss!")
       hasClub = true;
       const pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
-      pickup.volume = 0.8;
+      pickup.volume = 0.3;
       pickup.play();
       area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
       gameBlocks[83] = 10;                  // Removes the club
@@ -209,7 +209,7 @@ window.addEventListener("DOMContentLoaded", function () {
         if (hasClub) {
           // alert("Du slår ner trollet. Riktigt våldsamt och blodigt. ")
           const blood_sound = new Audio("./sounds/splash-death-splash-46048.mp3");
-          blood_sound.volume = 0.6;
+          blood_sound.volume = 0.3;
           blood_sound.play();
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
           gameBlocks[126] = 10;                 // Removes the troll
@@ -219,16 +219,16 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         else {
           const troll_sound = new Audio("./sounds/monster-growl-376892.mp3");
-          troll_sound.volume = 0.7;
+          troll_sound.volume = 0.5;
           troll_sound.play();
-          setTimeout(function () { alert("RAWWWR! Gå härifrån, tack.") }, 1000);
+          setTimeout(function () { alert("RAWWWR! Gå härifrån, tack.") }, 500);
         }
 
     } else if (block == 66) {
         alert('Grattis! Du hittade en bägare!');
         hasCup = true;
         const pickup = new Audio('./sounds/paper-collect-6-186720.mp3');
-        pickup.volume = 0.8;
+        pickup.volume = 0.3;
         pickup.play();
         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
         gameBlocks[39] = 67;                 // Removes the magma
@@ -242,7 +242,7 @@ window.addEventListener("DOMContentLoaded", function () {
         if (hasCup && choiceDrink == 'Ja' || choiceDrink == 'ja') {
           drankBlood = true;
           const drink = new Audio('./sounds/slurp-76969.mp3');
-          drink.volume = 0.8;
+          drink.volume = 0.05;
           drink.play();
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
           gameBlocks[236] = 65;                 // Removes the magma
@@ -259,7 +259,7 @@ window.addEventListener("DOMContentLoaded", function () {
         let pushHalfling = prompt('Vill du knuffa honom? Svara med Ja eller Nej.');
         if (pushHalfling == 'Ja' || pushHalfling == 'ja') {
           const scream = new Audio('./sounds/wilhelm-1-86895.mp3');
-          scream.volume = 0.5;
+          scream.volume = 0.3;
           scream.play();
           halflingDead = true;
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
@@ -275,16 +275,17 @@ window.addEventListener("DOMContentLoaded", function () {
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
           gameBlocks[323] = 10;                 // Removes the magma
           magma_move.play();
+          alert('Välkommen in till Djävulen!');
           drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
           rockford = document.getElementById('baddie1');
           moveIt()
         } else {
           if ((drankBlood == false && halflingDead == false)) {
-            alert('Du ser törstig ut, och du har publik.')
+            alert('Du ser törstig ut, och lämna inget vittne.')
           } else if (drankBlood == false) {
             alert('Du ser törstig ut.');
           } else {
-            alert('Du har publik.')
+            alert('Lämna inget vittne.')
           }
         }
     } else if (block == 666) {
@@ -305,21 +306,8 @@ window.addEventListener("DOMContentLoaded", function () {
           alert("Du har utlistat djävulen! Du är nu vår nya djävul!");
 
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-          gameBlocks[299] = 10;                 // Removes the door
-          gameBlocks[275] = 60;
-          drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
-          rockford = document.getElementById('baddie1');
-          rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
-          moveIt()
-        } else {
-          alert("Du är lika dum som du ser ut! Tillbaka till början!");
-          window.location.reload();
-        }
-    } else if (block == 60) {
-        if (runOnce < 1) {
-          runOnce++
-          // backgroundAudio.pause();
-          area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
+          gameBlocks[275] = 10;                 // Removes the door
+          gameBlocks[251] = 60;
           gameBlocks[323] = 24;
           magma_move.play();
           const endSong = new Audio("./sounds/sympathy-for-the-devil.mp3");
@@ -329,8 +317,12 @@ window.addEventListener("DOMContentLoaded", function () {
           rockford = document.getElementById('baddie1');
           rockford.style.backgroundImage = "url('./img/red_devil_new.png')";
           moveIt()
+        } else {
+          alert("Du är lika dum som du ser ut! Tillbaka till början!");
+          window.location.reload();
         }
-    }
+    
+  }
   }
 
 
@@ -370,31 +362,3 @@ window.addEventListener("DOMContentLoaded", function () {
 
   console.log('Everything is ready.');
 });
-
-
-
-
-
-// SIBARS GREJER
-// } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 20) {
-//         area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
-//         gameBlocks[344] = 10;                 // Removes the door
-//         drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed door
-//         rockford = document.getElementById('baddie1');
-//         moveIt()
-
-//       // Plays a sound when trying to enter the closed door
-//       } else if(gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 18) {
-//         let audio = new Audio('sounds/trying-to-open-a-locked-door-104302.mp3');
-//         audio.volume = 0.2 //Volumne 0-1
-//         audio.play()
-
-//       // Plays a sound when arriving to the Emerald, and also giving a Success message
-//       } else if (gameBlocks[(posLeft+moveLeft)+(posTop+moveTop)*gridSize] == 14) {
-//         let audio = new Audio('sounds/chaos-emerald-323237.mp3');
-//         audio.volume = 0.2 //Volumne 0-1
-//         audio.play()
-//         alert("Congratz, You have arrived to Emerald City")
-//       } else {  // Else means the baddie cannot move because of a wall
-//         console.log('Block detected, cant move.');
-//       }
