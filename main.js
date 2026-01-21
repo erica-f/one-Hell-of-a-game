@@ -138,7 +138,7 @@ window.addEventListener("DOMContentLoaded", function () {
         ground: gameArea[blockInFrontIndex] 
       };
   }
-
+       console.log(gameBlocks[301]);
   /**
    * Move Rockford
   */
@@ -265,6 +265,10 @@ window.addEventListener("DOMContentLoaded", function () {
           area.innerHTML = "<div id='baddie1' class='baddie down'></div>";   // Removes the board, but makes sure the baddie is readded
           gameBlocks[302] = 10;                 // Removes the magma
           gameBlocks[301] = 69;
+          let halfling = document.getElementById('n301');
+          console.log(halfling);
+   
+          // halfling.classList.add('fade-out');
           drawGamePlan(gameArea, gameBlocks);   // Redraws the board, with the removed magma
           rockford = document.getElementById('baddie1');
           moveIt()

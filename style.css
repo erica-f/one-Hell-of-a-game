@@ -429,3 +429,21 @@ body {
 .b69{background-image:url(img/halfling_old.png), url(img/tiles/floor/Hell/lava_old.png);}
 .b70{background-image:url(img/items/orb_of_fire_new.png), url(img/tiles/floor/Hell/lava_old.png);}
 .b666{background-image:url(img/blue_devil_new.png), url(img/tiles/floor/Hell/demonic_red_1.png);}
+
+
+/* Fade Out */
+#n301 {
+  animation-name: fade-out;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    /* transform: scale(3); */
+  }
+
+  to {
+    opacity: 0;
+    /* transform: scale(0); */
+  }
+}
